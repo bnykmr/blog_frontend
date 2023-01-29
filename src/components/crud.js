@@ -95,7 +95,7 @@ const CrudForm = () => {
 
 
           <div className='flex flex-col space-y-2'>
-            {/* <label htmlFor="image">{type === 'create' ? 'Select an Image' : 'Change an image'}</label> */}
+            <label htmlFor="image">{type === 'create' ? 'Select an Image' : 'Change an image'}</label>
             <input onChange={(e) => {
 
               const file = e.currentTarget.files[0];
@@ -104,7 +104,7 @@ const CrudForm = () => {
               const reader = new FileReader();
               reader.readAsDataURL(file);
               reader.addEventListener('load', () => {
-                formik.setFieldValue('image', reader.result);
+                formik.setFieldValue('imageUrl', reader.result);
               })
 
             }} className='border border-gray-500 outline-none px-2 py-1' type="file" id='image' name='image' />
